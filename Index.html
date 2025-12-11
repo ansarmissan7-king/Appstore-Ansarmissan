@@ -8,13 +8,14 @@
   <style>
         /* Global Styles */
         :root {
-            --bg-color: #0c0c0c; /* Darker Background */
+            --bg-color: #0c0c0c;
             --card-color: #1a1a1a;
             --accent-color: #00f7ff; /* Neon Cyan */
             --text-light: #f0f0f0;
             --text-dark: #b0b0b0;
             --delete-color: #ff4500;
             --whatsapp-green: #25d366;
+            --icon-size: 80px;
         }
 
         body {
@@ -26,13 +27,13 @@
             line-height: 1.6;
         }
 
-        /* Header and Navigation (Adjusted) */
+        /* Header and Navigation */
         header {
             background-color: #000000;
             padding: 18px 0;
             border-bottom: 3px solid var(--accent-color);
             box-shadow: 0 4px 15px rgba(0, 247, 255, 0.2);
-            position: sticky; /* Keep nav bar visible */
+            position: sticky;
             top: 0;
             z-index: 1000;
         }
@@ -58,7 +59,7 @@
             display: flex;
             margin: 0;
             padding: 0;
-            gap: 30px; /* Better spacing between links */
+            gap: 30px;
         }
 
         .nav-links a {
@@ -75,8 +76,6 @@
             text-shadow: 0 0 5px var(--accent-color);
             border-bottom: 2px solid var(--accent-color);
         }
-        /* End Navigation Adjustment */
-
 
         /* Banner Marquee */
         .banner-table {
@@ -137,13 +136,24 @@
             transform: translateY(-5px);
         }
 
-        .app-item img {
-            width: 90px;
-            height: 90px;
+        /* Placeholder Icon Styles (Replaces PNGs) */
+        .app-icon {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: var(--icon-size);
+            height: var(--icon-size);
             border-radius: 25%;
             margin-bottom: 15px;
             border: 3px solid var(--accent-color);
             box-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+            font-size: calc(var(--icon-size) * 0.5);
+            color: var(--accent-color);
+            background-color: #000;
+        }
+        
+        .app-icon img { /* Hide original img tag */
+            display: none;
         }
 
         .app-item strong {
@@ -151,7 +161,7 @@
             font-size: 20px;
             margin-bottom: 15px;
             color: var(--text-light);
-            height: 40px; /* Fixed height for title */
+            min-height: 40px; 
         }
 
         .price-details {
@@ -167,7 +177,6 @@
             margin-right: 8px;
         }
 
-        /* FREE Badge Styling */
         .price-details i {
             font-style: normal;
             font-weight: 900;
@@ -232,7 +241,6 @@
             resize: vertical;
         }
         
-        /* Submit button remains the same (WhatsApp Green) */
         #contact button {
             background-color: var(--whatsapp-green);
             color: white;
@@ -329,7 +337,7 @@
 	  <h2 class="section-title-main"><i class="fas fa-crown"></i> Exclusive Pro Unlocks</h2>
 
 	  <div class="app-item">
-		<img src="kinemaster.png" alt="KineMaster">
+        <div class="app-icon"><i class="fas fa-video"></i></div>
 		<strong id="a">KineMaster Pro Unlock</strong>
 		<div class="price-details">
             <b>Price</b> <i>FREE</i> <sub><del>Pkr.1500</del></sub>
@@ -338,7 +346,7 @@
 	  </div>
 
 	  <div class="app-item">
-		<img src="Tiktok.png" alt="Tiktok">
+        <div class="app-icon"><i class="fab fa-tiktok"></i></div>
 		<strong id="b">Tiktok Live Unlock</strong>
 		<div class="price-details">
             <b>Price</b> <i>FREE</i> <sub><del>Pkr.1000</del></sub>
@@ -347,7 +355,7 @@
 	  </div>
 
 	  <div class="app-item">
-		<img src="Sketchbook.png" alt="Sketchbook">
+        <div class="app-icon"><i class="fas fa-palette"></i></div>
 		<strong id="e">Sketchbook Pro Unlock</strong>
 		<div class="price-details">
             <b>Price</b> <i>FREE</i> <sub><del>Pkr.1000</del></sub>
@@ -356,7 +364,7 @@
 	  </div>
 
 	  <div class="app-item">
-		<img src="pixel.png" alt="Pixellab">
+        <div class="app-icon"><i class="fas fa-text-width"></i></div>
 		<strong id="f">Pixellab Pro Unlock</strong>
 		<div class="price-details">
             <b>Price</b> <i>FREE</i> <sub><del>Pkr.1100</del></sub>
@@ -365,7 +373,7 @@
 	  </div>
 
 	  <div class="app-item">
-		<img src="telegram.png" alt="Telegram">
+        <div class="app-icon"><i class="fab fa-telegram-plane"></i></div>
 		<strong id="g">Telegram Pro Unlock</strong>
 		<div class="price-details">
             <b>Price</b> <i>FREE</i> <sub><del>Pkr.1000</del></sub>
@@ -374,7 +382,7 @@
 	  </div>
 
       <div class="app-item">
-		<img src="powerdirector.png" alt="PowerDirector">
+        <div class="app-icon"><i class="fas fa-film"></i></div>
 		<strong id="j">PowerDirector Premium Unlock</strong>
 		<div class="price-details">
             <b>Price</b> <i>FREE</i> <sub><del>Pkr.2000</del></sub>
@@ -383,7 +391,7 @@
 	  </div>
 
       <div class="app-item">
-		<img src="ansarmissan.png" alt="Ansarmissan Link Shortener">
+        <div class="app-icon"><i class="fas fa-link"></i></div>
 		<strong id="k">Ansarmissan Link Shortener</strong>
 		<div class="price-details">
             <b>Price</b> <i>FREE</i> <sub><del>Pkr.500</del></sub>
@@ -422,10 +430,8 @@
         const WHATSAPP_NUMBER = '923010854975'; 
         
         function trackPurchase(appName, downloadLink) {
-            // User ko download link par bhejta hai
             window.open(downloadLink, '_blank');
             
-            // App name ki ID ko red kar dega
             const idMap = {
                 'KineMaster': 'a', 
                 'Tiktok': 'b', 
@@ -437,7 +443,7 @@
             };
             const elementId = idMap[appName];
             if (elementId) {
-                // Changing color to delete color (red/orange)
+                // Change color to delete color (red/orange)
                 document.getElementById(elementId).style.color = 'var(--delete-color)'; 
             }
             
@@ -451,24 +457,18 @@
                 return;
             }
             
-            // Pre-filled message ready karna
             const predefinedText = "--- Ansarmissan App Request ---\n\n";
             const fullMessage = predefinedText + comment.trim();
             
-            // Message URL-encode karna
             const encodedMessage = encodeURIComponent(fullMessage);
             
-            // WhatsApp link banana (wa.me standard format)
+            // Standard and secure wa.me link for cross-platform compatibility
             const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
             
-            // New tab mein WhatsApp open karna
             window.open(whatsappLink, '_blank');
             
-            // Text area clear kar do
+            // Clear the text area
             document.getElementById('comment-box').value = ''; 
-            
-            // Koi alert nahi denge taaki user direct WhatsApp par focus kare
-            // alert('Aapka request WhatsApp par bhej diya gaya hai. Send button dabana na bhulein!');
         }
 
 </script>
