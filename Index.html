@@ -18,6 +18,10 @@
             --icon-size: 80px;
         }
 
+        * {
+            box-sizing: border-box; /* Standard box model */
+        }
+
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
@@ -63,7 +67,6 @@
         }
 
         .nav-links li {
-            /* Ensures li tags don't cause layout issues */
             display: inline-block; 
         }
 
@@ -460,12 +463,12 @@
             const predefinedText = "--- Ansarmissan App Request ---\n\n";
             let fullMessage = predefinedText + comment.trim();
             
-            // Fix: Ensure all newlines and spaces are correctly encoded for URL transport
+            // Fix: Ensures robust encoding for Vercel/Netlify environments
             const encodedMessage = encodeURIComponent(fullMessage);
             
             const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
             
-            // Opening in a new window is the only way to trigger an external app/link safely
+            // Standard method to bypass browser security and open external app
             window.open(whatsappLink, '_blank');
             
             document.getElementById('comment-box').value = ''; 
@@ -473,4 +476,5 @@
 
 </script>
 </body>
-</html>
+	</html>
+	
