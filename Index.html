@@ -3,35 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ansarmissan Appstore - Free Unlocks</title>
+  <title>Ansarmissan Appstore - Premium Unlocks</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #1a1a1a;
-            color: #fff;
+        /* Global Styles */
+        :root {
+            --bg-color: #0c0c0c;
+            --card-color: #1a1a1a;
+            --accent-color: #00f7ff; /* Neon Cyan */
+            --text-light: #f0f0f0;
+            --text-dark: #b0b0b0;
+            --delete-color: #ff4500;
+            --whatsapp-green: #25d366;
+            --icon-size: 80px;
         }
 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Header and Navigation */
         header {
-            background-color: #333;
-            padding: 15px 0;
-            border-bottom: 2px solid #5cb85c;
+            background-color: #000000;
+            padding: 18px 0;
+            border-bottom: 3px solid var(--accent-color);
+            box-shadow: 0 4px 15px rgba(0, 247, 255, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         nav {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 25px;
         }
 
         nav h1 {
             margin: 0;
-            color: #5cb85c;
-            font-size: 24px;
+            color: var(--accent-color);
+            font-size: 28px;
+            text-shadow: 0 0 8px var(--accent-color);
         }
 
         .nav-links {
@@ -39,224 +59,266 @@
             display: flex;
             margin: 0;
             padding: 0;
-        }
-
-        .nav-links li {
-            margin: 0 15px;
+            gap: 30px;
         }
 
         .nav-links a {
-            color: #fff;
+            color: var(--text-light);
             text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
+            font-weight: 500;
+            font-size: 16px;
+            padding: 5px 0;
+            transition: color 0.3s, text-shadow 0.3s;
         }
 
         .nav-links a:hover {
-            color: #5cb85c;
+            color: var(--accent-color);
+            text-shadow: 0 0 5px var(--accent-color);
+            border-bottom: 2px solid var(--accent-color);
         }
 
+        /* Banner Marquee */
         .banner-table {
             width: 100%;
-            background-color: #000;
-            color: #fff;
+            background-color: #1e1e1e;
             border-collapse: collapse;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
         }
 
         .banner-table td {
-            padding: 10px 0;
+            padding: 8px 0;
         }
 
         marquee {
-            font-size: 18px;
+            font-size: 16px;
             font-weight: 600;
-            color: #ffeb3b; /* Yellow for attention */
+            color: #ffdd57; 
         }
 
         section {
-            padding: 20px;
+            padding: 40px 25px;
             max-width: 1200px;
-            margin: 20px auto;
-            background-color: #2a2a2a;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            margin: 30px auto;
+            background-color: var(--card-color);
+            border-radius: 12px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.7);
         }
 
         /* Products Section */
         #products {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
         .section-title-main {
             text-align: center;
-            color: #5cb85c;
-            margin-bottom: 30px;
-            grid-column: 1 / -1; /* Title spans all columns */
+            color: var(--accent-color);
+            margin-bottom: 40px;
+            grid-column: 1 / -1;
+            font-size: 32px;
+            text-shadow: 0 0 10px rgba(0, 247, 255, 0.7);
         }
 
         .app-item {
-            background-color: #333;
-            padding: 15px;
-            border-radius: 8px;
+            background-color: #2a2a2a;
+            padding: 25px;
+            border-radius: 10px;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            transition: transform 0.2s;
+            border: 2px solid #333;
+            transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
         }
 
         .app-item:hover {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 20px rgba(0, 247, 255, 0.5);
             transform: translateY(-5px);
         }
 
-        .app-item img {
-            width: 100px;
-            height: 100px;
-            border-radius: 15px;
-            margin-bottom: 10px;
-            border: 3px solid #5cb85c;
+        /* Placeholder Icon Styles (Replaces PNGs) */
+        .app-icon {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: var(--icon-size);
+            height: var(--icon-size);
+            border-radius: 25%;
+            margin-bottom: 15px;
+            border: 3px solid var(--accent-color);
+            box-shadow: 0 0 10px rgba(0, 247, 255, 0.5);
+            font-size: calc(var(--icon-size) * 0.5);
+            color: var(--accent-color);
+            background-color: #000;
+        }
+        
+        .app-icon img { /* Hide original img tag */
+            display: none;
         }
 
         .app-item strong {
             display: block;
-            font-size: 18px;
-            margin-bottom: 5px;
-            color: #fff;
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: var(--text-light);
+            min-height: 40px; 
         }
 
-        .app-item b {
-            font-size: 14px;
-            color: #aaa;
-            margin-right: 5px;
+        .price-details {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 20px;
         }
 
-        /* Price Styling (Updated) */
-        .app-item i {
+        .price-details b {
+            font-size: 15px;
+            color: var(--text-dark);
+            margin-right: 8px;
+        }
+
+        .price-details i {
             font-style: normal;
-            font-weight: bold;
-            font-size: 18px;
-            color: #5cb85c; /* Green for FREE */
-            margin-right: 5px;
+            font-weight: 900;
+            font-size: 22px;
+            color: var(--accent-color);
+            background: rgba(0, 247, 255, 0.15);
+            padding: 5px 10px;
+            border-radius: 6px;
+            border: 1px solid var(--accent-color);
+            letter-spacing: 1px;
         }
 
-        .app-item sub {
-            font-size: 12px;
-            color: #dc3545; /* Red for deleted price */
+        .price-details sub {
+            font-size: 13px;
+            color: var(--delete-color); 
             text-decoration: line-through;
+            margin-left: 15px;
         }
 
         .download-btn {
-            background-color: #5cb85c;
-            color: #fff;
+            background-color: var(--accent-color);
+            color: var(--bg-color);
             border: none;
-            padding: 10px 20px;
+            padding: 14px 25px;
             margin-top: 15px;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
             width: 100%;
         }
 
         .download-btn:hover {
-            background-color: #449d44;
+            background-color: #00d4e0;
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0, 247, 255, 0.6);
         }
 
         /* Contact & About Section */
-        #contact h4, #about h4 {
-            color: #5cb85c;
+        #contact, #about {
             text-align: center;
-            margin-bottom: 15px;
         }
 
-        #contact {
-            text-align: center;
+        #contact h4, #about h4 {
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            font-size: 24px;
+            text-shadow: 0 0 5px rgba(0, 247, 255, 0.3);
         }
 
         #comment-box {
             width: 90%;
             max-width: 600px;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #5cb85c;
-            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid var(--accent-color);
+            border-radius: 8px;
             background-color: #333;
-            color: #fff;
+            color: var(--text-light);
             box-sizing: border-box;
+            resize: vertical;
         }
-
+        
         #contact button {
-            background-color: #007bff;
+            background-color: var(--whatsapp-green);
             color: white;
             border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
+            padding: 15px 35px;
+            border-radius: 8px;
             cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
+            font-size: 18px;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.2s;
         }
 
         #contact button:hover {
-            background-color: #0056b3;
+            background-color: #128c7e;
+            transform: translateY(-2px);
         }
 
         .contact-info {
             list-style: none;
             padding: 0;
-            text-align: center;
         }
 
         .contact-info li {
-            margin-bottom: 10px;
-            font-size: 16px;
-            color: #fff;
+            margin-bottom: 15px;
+            font-size: 17px;
+            color: var(--text-dark);
         }
 
         .contact-info i {
-            margin-right: 10px;
-            color: #5cb85c;
+            margin-right: 12px;
+            color: var(--accent-color);
+            font-size: 20px;
         }
 
         .developer-tag {
             text-align: center;
-            margin-top: 20px;
-            font-size: 15px;
-            color: #aaa;
+            margin-top: 30px;
+            font-size: 16px;
+            color: var(--text-dark);
+        }
+
+        footer {
+            background-color: #000000;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+            color: var(--text-dark);
+            border-top: 1px solid #333;
         }
         
         /* Responsive Adjustments */
         @media (max-width: 768px) {
             nav {
                 flex-direction: column;
+                align-items: center;
             }
             .nav-links {
                 margin-top: 15px;
+                gap: 15px;
             }
-            .nav-links li {
-                margin: 0 10px;
+            .nav-links a {
+                font-size: 14px;
             }
-            #products {
-                grid-template-columns: 1fr;
-            }
-            .contact-info li {
-                display: block;
-                margin-bottom: 10px;
+            .section-title-main {
+                font-size: 28px;
             }
         }
-
-</style>
-  </head>
-  <body>
+  </style>
+</head>
+<body>
 
     <header>
 	  <nav>
 		<h1>Ansarmissan Appstore</h1>
 		<ul class="nav-links">
-		  <li><a href="#products">Home</a></li>
-		  <li><a href="#contact">Contact</a></li>
-		  <li><a href="#about">About</a></li>
+		  <li><a href="#products"><i class="fas fa-home"></i> Home</a></li>
+		  <li><a href="#contact"><i class="fab fa-whatsapp"></i> Request App</a></li>
+		  <li><a href="#about"><i class="fas fa-info-circle"></i> About</a></li>
 		</ul>
 	  </nav>
     </header>
@@ -265,61 +327,75 @@
 	  <tr>
 		<td>
 		  <marquee scrollamount="10">
-			📢 **Welcome Friends!** All Premium Unlock Apks Available for **FREE**! If You Need Any Apk, Kindly Send Me a Comment. I Am Ready to Unlock Apk.
+			📢 **Welcome!** All Premium Unlock Apks are now **FREE** for a limited time! Request any app you need.
 		  </marquee>
 		</td>
 	  </tr>
     </table>
 
     <section id="products">
-	  <h2 class="section-title-main">🔥 Exclusive Pro Unlocks</h2>
+	  <h2 class="section-title-main"><i class="fas fa-crown"></i> Exclusive Pro Unlocks</h2>
 
 	  <div class="app-item">
-		<img src="kinemaster.png" alt="KineMaster">
+        <div class="app-icon"><i class="fas fa-video"></i></div>
 		<strong id="a">KineMaster Pro Unlock</strong>
-		<b>Price</b> <i>Free</i> <sub><del>Pkr.1500</del></sub>
+		<div class="price-details">
+            <b>Price</b> <i>FREE</i> <sub><del>Pkr.1500</del></sub>
+        </div>
 		<button class="download-btn" onclick="trackPurchase('KineMaster', 'https://www.mediafire.com/file/dle8gxeu09oeqi8/KineMaster_Pro.apk/file')">Download Now</button>
 	  </div>
 
 	  <div class="app-item">
-		<img src="Tiktok.png" alt="Tiktok">
+        <div class="app-icon"><i class="fab fa-tiktok"></i></div>
 		<strong id="b">Tiktok Live Unlock</strong>
-		<b>Price</b> <i>Free</i> <sub><del>Pkr.1000</del></sub>
+		<div class="price-details">
+            <b>Price</b> <i>FREE</i> <sub><del>Pkr.1000</del></sub>
+        </div>
 		<button class="download-btn" onclick="trackPurchase('Tiktok', 'https://www.mediafire.com/file/2sp2dik1nwu04o0/TikTok_LIVE_BY_USMAN.apk/file')">Download Now</button>
 	  </div>
 
 	  <div class="app-item">
-		<img src="Sketchbook.png" alt="Sketchbook">
+        <div class="app-icon"><i class="fas fa-palette"></i></div>
 		<strong id="e">Sketchbook Pro Unlock</strong>
-		<b>Price</b> <i>Free</i> <sub><del>Pkr.1000</del></sub>
+		<div class="price-details">
+            <b>Price</b> <i>FREE</i> <sub><del>Pkr.1000</del></sub>
+        </div>
 		<button class="download-btn" onclick="trackPurchase('Sketchbook', 'https://www.mediafire.com/file/va8jhby4j0atxg7/Sketchbook_6.1.1.apk/file')">Download Now</button>
 	  </div>
 
 	  <div class="app-item">
-		<img src="pixel.png" alt="Pixellab">
+        <div class="app-icon"><i class="fas fa-text-width"></i></div>
 		<strong id="f">Pixellab Pro Unlock</strong>
-		<b>Price</b> <i>Free</i> <sub><del>Pkr.1100</del></sub>
+		<div class="price-details">
+            <b>Price</b> <i>FREE</i> <sub><del>Pkr.1100</del></sub>
+        </div>
 		<button class="download-btn" onclick="trackPurchase('Pixellab', 'https://www.mediafire.com/file/42a2nd9b2yma380/PixelLab_2.1.4.apk/file')">Download Now</button>
 	  </div>
 
 	  <div class="app-item">
-		<img src="telegram.png" alt="Telegram">
+        <div class="app-icon"><i class="fab fa-telegram-plane"></i></div>
 		<strong id="g">Telegram Pro Unlock</strong>
-		<b>Price</b> <i>Free</i> <sub><del>Pkr.1000</del></sub>
+		<div class="price-details">
+            <b>Price</b> <i>FREE</i> <sub><del>Pkr.1000</del></sub>
+        </div>
 		<button class="download-btn" onclick="trackPurchase('Telegram', 'https://www.mediafire.com/file/x4mjlvu0jn5neha/Telegram_12.0.1.apk/file')">Download Now</button>
 	  </div>
 
       <div class="app-item">
-		<img src="powerdirector.png" alt="PowerDirector">
+        <div class="app-icon"><i class="fas fa-film"></i></div>
 		<strong id="j">PowerDirector Premium Unlock</strong>
-		<b>Price</b> <i>Free</i> <sub><del>Pkr.2000</del></sub>
+		<div class="price-details">
+            <b>Price</b> <i>FREE</i> <sub><del>Pkr.2000</del></sub>
+        </div>
 		<button class="download-btn" onclick="trackPurchase('PowerDirector', 'https://www.mediafire.com/file/peushdm0nxugjps/PowerDirector_15.9.0_apks.apk/file')">Download Now</button>
 	  </div>
 
       <div class="app-item">
-		<img src="ansarmissan.png" alt="Ansarmissan Link Shortener">
+        <div class="app-icon"><i class="fas fa-link"></i></div>
 		<strong id="k">Ansarmissan Link Shortener</strong>
-		<b>Price</b> <i>Free</i> <sub><del>Pkr.500</del></sub>
+		<div class="price-details">
+            <b>Price</b> <i>FREE</i> <sub><del>Pkr.500</del></sub>
+        </div>
 		<button class="download-btn" onclick="trackPurchase('Link Shortener', 'https://www.mediafire.com/file/1an6n51zlcjo3uf/Ansarmissan_Link_Shortener.apk/file')">Download Now</button>
 	  </div>
 
@@ -327,15 +403,16 @@
 
 
     <section id="contact">
-	  <h4>Contact Us / Request App</h4>
-	  <textarea id="comment-box" cols="30" rows="6" placeholder="Apni App Request ya Comment yahan likhen..."></textarea>
-	  <button onclick="submitComment()">Submit Request</button>
+	  <h4><i class="fab fa-whatsapp"></i> App Request via WhatsApp</h4>
+	  <p style="color: var(--text-dark); margin-bottom: 20px;">Apni app ki request ya koi bhi sawal neeche likhen. Click karne par, yeh message aapki WhatsApp chat mein taiyar mil jayega. Apko sirf **Send** dabana hoga.</p>
+	  <textarea id="comment-box" cols="30" rows="6" placeholder="Example: Mujhe 'Video Editor Pro' ka latest version chahiye."></textarea>
+	  <button onclick="submitComment()">Send Request via WhatsApp</button>
     </section>
 
     <section id="about">
 	  <h4>About & Contact Details</h4>
 	  <ul class="contact-info">
-		<li><i class="fas fa-whatsapp"></i> **Whatsapp**: +923010854975</li>
+		<li><i class="fab fa-whatsapp"></i> **Whatsapp**: +923010854975</li>
 		<li><i class="fas fa-envelope"></i> **Email**: Shaheen27@gmail</li>
 		<li><i class="fas fa-info-circle"></i> **Purpose**: Education Purpose / Prototype</li>
 	  </ul>
@@ -348,16 +425,13 @@
 	  &copy; 2025 Ansarmissan AppStore. All Rights Reserved.
     </footer>
 
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-
 <script>
-        // JavaScript for button functionality and tracking
+        // WhatsApp number (include country code without +)
+        const WHATSAPP_NUMBER = '923010854975'; 
         
         function trackPurchase(appName, downloadLink) {
-            // User ko download link par bhejta hai
             window.open(downloadLink, '_blank');
             
-            // App name ki ID ko red kar dega
             const idMap = {
                 'KineMaster': 'a', 
                 'Tiktok': 'b', 
@@ -365,11 +439,12 @@
                 'Pixellab': 'f', 
                 'Telegram': 'g',
                 'PowerDirector': 'j',
-                'Link Shortener': 'k' // New ID for Link Shortener     
+                'Link Shortener': 'k' 
             };
             const elementId = idMap[appName];
             if (elementId) {
-                document.getElementById(elementId).style.color = '#dc3545'; // Red color
+                // Change color to delete color (red/orange)
+                document.getElementById(elementId).style.color = 'var(--delete-color)'; 
             }
             
             alert(`Thanks for downloading ${appName}! Your download should start shortly.`);
@@ -378,15 +453,24 @@
         function submitComment() {
             const comment = document.getElementById('comment-box').value;
             if (comment.trim() === '') {
-                alert('Meharbani karke comment likhen.');
+                alert('Meharbani karke apni app request ya comment likhen.');
                 return;
             }
-            // Real functionality requires backend
-            alert(`Shukriya! Aapka comment/request receive ho gaya hai: "${comment.substring(0, 50)}..."`);
-            document.getElementById('comment-box').value = ''; // Text area clear kar do
+            
+            const predefinedText = "--- Ansarmissan App Request ---\n\n";
+            const fullMessage = predefinedText + comment.trim();
+            
+            const encodedMessage = encodeURIComponent(fullMessage);
+            
+            // Standard and secure wa.me link for cross-platform compatibility
+            const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+            
+            window.open(whatsappLink, '_blank');
+            
+            // Clear the text area
+            document.getElementById('comment-box').value = ''; 
         }
 
 </script>
-  </body>
-	</html>
-	
+</body>
+</html>
