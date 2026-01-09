@@ -328,13 +328,13 @@
     <section id="products">
 	  <h2 class="section-title-main"><i class="fas fa-crown"></i> Exclusive Pro Unlocks</h2>
 
-	  <div class="app-item">
+      <div class="app-item">
 		<img src="kinemaster.png" alt="KineMaster">
 		<strong id="a">KineMaster Pro Unlock</strong>
 		<div class="price-details">
 		  <b>Price</b> <i>FREE</i> <sub><del>Pkr.1500</del></sub>
         </div>
-		<button class="download-btn" onclick="trackPurchase('KineMaster', 'https://www.mediafire.com/file/m27bvlos9yubvjx/KineMaster_Pro.apk/file')">Download Now</button>
+		<button class="download-btn" onclick="trackPurchase('KineMaster', 'https://www.mediafire.com/file/dle8gxeu09oeqi8/KineMaster_Pro.apk/file')">Download Now</button>
 	  </div>
 
 	  <div class="app-item">
@@ -392,7 +392,7 @@
 	  </div>
 
       <div class="app-item">
-		<img src="ansarmissan_db_1.png" alt="AnsarMissan DB">
+		<img src="ansarmissandb.png" alt="AnsarMissan DB">
 		<strong id="l">AnsarMissan DB 1.0</strong>
 		<div class="price-details">
 		  <b>Price</b> <i>FREE</i> <sub><del>Pkr.800</del></sub>
@@ -400,6 +400,52 @@
 		<button class="download-btn" onclick="trackPurchase('AnsarMissan DB', 'https://www.mediafire.com/file/mifak8miciv1gh6/AnsarMissan_DB_1_1.0.apk/file')">Download Now</button>
 	  </div>
 
+      <div class="app-item">
+		<img src="youcam.png" alt="YouCam Makeup">
+		<strong id="m">YouCam Makeup Premium</strong>
+		<div class="price-details">
+		  <b>Price</b> <i>FREE</i> <sub><del>Pkr.1800</del></sub>
+        </div>
+		<button class="download-btn" onclick="trackPurchase('YouCam Makeup', 'https://www.mediafire.com/file/r51hucljpkxnfrq/YouCam_Makeup_6.38.1_apks.apk/file')">Download Now</button>
+	  </div>
+
+
+      <div class="app-item">
+		<img src="hillclimb.png" alt="Hill Climb Racing">
+		<strong id="o">Hill Climb Racing Mod</strong>
+		<div class="price-details">
+		  <b>Price</b> <i>FREE</i> <sub><del>Pkr.800</del></sub>
+        </div>
+		<button class="download-btn" onclick="trackPurchase('Hill Climb Racing', 'https://www.mediafire.com/file/klgiet0lkbt0nd6/Hill_Climb_Racing.apk/file')">Download Now</button>
+	  </div>
+
+      <div class="app-item">
+		<img src="parking.png" alt="Parking Game">
+		<strong id="p">Parking Game Mod</strong>
+		<div class="price-details">
+		  <b>Price</b> <i>FREE</i> <sub><del>Pkr.900</del></sub>
+        </div>
+		<button class="download-btn" onclick="trackPurchase('Parking Game', 'https://www.mediafire.com/file/ee5d5cnqlljwelv/Parking_Game.apk/file')">Download Now</button>
+	  </div>
+
+      <div class="app-item">
+		<img src="toolkit2.png" alt="Ansarmissan Toolkit 2">
+		<strong id="q">Ansarmissan Toolkit 2.0</strong>
+		<div class="price-details">
+		  <b>Price</b> <i>FREE</i> <sub><del>Pkr.1000</del></sub>
+        </div>
+		<button class="download-btn" onclick="trackPurchase('Toolkit 2', 'https://www.mediafire.com/file/lbocclta4qcdh9x/Ansarmissan_Toolkit_2_9.8.apk/file')">Download Now</button>
+	  </div>
+
+<div class="app-item">
+		<img src="toolkit3.png" alt="Toolkit 3">
+		<strong id="n">Ansarmissan Toolkit 3 Pro</strong>
+		<div class="price-details">
+		  <b>Price</b> <i>FREE</i> <sub><del>Pkr.1200</del></sub>
+        </div>
+		<button class="download-btn" onclick="trackPurchase('Toolkit 3', 'https://www.mediafire.com/file/10qozae3eoir6en/toolkit_3.apk/file">Download Now</button>
+	  </div>
+	  
 	</section>
 
 
@@ -427,7 +473,7 @@
     </footer>
 
 <script>
-        // WhatsApp number (include country code without +)
+        // WhatsApp number
         const WHATSAPP_NUMBER = '923010854975'; 
         
         function trackPurchase(appName, downloadLink) {
@@ -443,7 +489,12 @@
                 'Telegram': 'g',
                 'PowerDirector': 'j',
                 'Link Shortener': 'k',
-                'AnsarMissan DB': 'l' // Added ID for new app
+                'AnsarMissan DB': 'l',
+                'YouCam Makeup': 'm',
+                'Toolkit 3': 'n',
+                'Hill Climb Racing': 'o',
+                'Parking Game': 'p',
+                'Toolkit 2': 'q'
             };
             const elementId = idMap[appName];
             if (elementId) {
@@ -464,25 +515,13 @@
             // Pre-filled message ready karna
             const predefinedText = "--- Ansarmissan App Request ---\n\n";
             const fullMessage = predefinedText + comment.trim();
-            
-            // Message URL-encode karna
             const encodedMessage = encodeURIComponent(fullMessage);
-            
-            // WhatsApp link banana (wa.me standard format)
             const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
-            
-            // New tab mein WhatsApp open karna
             window.open(whatsappLink, '_blank');
-            
-            // Text area clear kar do
             document.getElementById('comment-box').value = ''; 
-            
-            // Koi alert nahi denge taaki user direct WhatsApp par focus kare
-            // alert('Aapka request WhatsApp par bhej diya gaya hai. Send button dabana na bhulein!');
         }
 
 </script>
   </body>
 </html>
-
 
