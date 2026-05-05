@@ -1,0 +1,26 @@
+body{
+    background:#0f2027;
+    color:white;
+    font-family:Arial;
+    text-align:center;
+}
+
+.container{
+    display:grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+    padding:20px;
+}
+
+.card{
+    background:#111;
+    padding:15px;
+    border-radius:10px;
+}
+
+.btn{
+    background:#00ffcc;
+    padding:8px;
+    color:black;
+    text-decoration:none;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Shaheen Store</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header>
+<h1>🚀 Shaheen AppStore</h1>
+</header>
+
+<div class="container">
+{% for app in apps %}
+<div class="card">
+    <h3>{{app[1]}}</h3>
+    <p>{{app[2]}}</p>
+    <p>⬇ {{app[4]}} Downloads</p>
+    <a href="/download/{{app[0]}}" class="btn">Download</a>
+</div>
+{% endfor %}
+</div>
+
+</body>
+</html>
